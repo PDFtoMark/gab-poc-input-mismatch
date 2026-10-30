@@ -1,0 +1,11 @@
+name: callee no debug input
+on:
+  workflow_call:
+    secrets:
+      TOKEN:
+        required: false
+jobs:
+  show:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "callee ran"
