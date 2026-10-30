@@ -1,0 +1,13 @@
+name: caller with undeclared input
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  call:
+    if: github.repository_owner == 'AdobeDocs'
+    uses: PDFtoMark/gab-poc-input-mismatch/.github/workflows/callee.yml@main
+    with:
+      debug: true
+    secrets:
+      TOKEN: ${{ secrets.TOKEN }}
